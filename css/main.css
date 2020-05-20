@@ -62,14 +62,14 @@ ul.posts li {
   overflow-x: hidden;
   padding-top: 20px; 
 }
-.sidenave a {
+.sidenavea {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
 }
-.sidenave a:hover {
+.sidenaveahover {
     color: #f1f1f1;
 }
 .main {
