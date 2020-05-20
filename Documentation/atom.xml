@@ -4,11 +4,11 @@ layout: feed
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-	<title>Zero Trust Network Blog</title>
-	<link href="http://wwuzerotrust.github.io/blog/atom.xml" rel="self"/>
-	<link href="http://wwuzerotrust.github.io/blog"/>
+	<title>Zero Trust Network Documentation</title>
+	<link href="http://wwuzerotrust.github.io/Documentation/atom.xml" rel="self"/>
+	<link href="http://wwuzerotrust.github.io/Documentation"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://wwuzerotrust.github.io/blog</id>
+	<id>http://wwuzerotrust.github.io/Documentation</id>
 	<author>
 		<name>Zero Trust Network</name>
 	</author>
