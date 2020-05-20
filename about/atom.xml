@@ -4,7 +4,7 @@ layout: feed
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-	<title>Zero Trust Network Blog</title>
+	<title>Zero Trust Network About</title>
 	<link href="http://wwuzerotrust.github.io/about/atom.xml" rel="self"/>
 	<link href="http://wwuzerotrust.github.io/about"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
