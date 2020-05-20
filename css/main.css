@@ -62,14 +62,14 @@ sidenav {
   overflow-x: hidden;
   padding-top: 20px; 
 }
-sidenavea {
+sidenave b {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
 }
-sidenavea:hover {
+sidenave b:hover {
     color: #f1f1f1;
 }
 .main {
