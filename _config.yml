@@ -1,3 +1,4 @@
-name: Zero Trust Network, WWU Senior Project
+title: Zero Trust Network, WWU Senior Project
 markdown: kramdown
+theme: jekyll-theme-time-machine
 permalink: /blog/:year/:month/:day/:title
