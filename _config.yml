@@ -1,2 +1,3 @@
 name: Zero Trust Network, WWU Senior Project
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
