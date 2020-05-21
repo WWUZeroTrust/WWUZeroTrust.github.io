@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+   background: #CCCCCC;
+}
+
+.sidenav {
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-weight: bold;
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 15px
+}
+
+.sidenav a, .dropdown-btn {
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-weight: bold;
+  padding: 10px 12px 10px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  left: 0;
+  font-size: 15px
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  text-decoration: underline;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+.active {
+  background-color: SlateGray;
+  color: white;
+}
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 15px;}
+}
+h1 {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: black;
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+   <a href="/">Home</a>
+	<button class="dropdown-btn"><b>Policy Engine</b>
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="/PolicyEngine/diagram">Diagram</a>
+    <a href="#">Link 2</a>
+    <a href="#">References</a>
+  </div>
+	<button class="dropdown-btn"><b>Trust Engine</b>
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Diagram</a>
+    <a href="#">Link 2</a>
+    <a href="#">References</a>
+  </div>
+	<button class="dropdown-btn"></b>Network Agent</b>
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Diagram</a>
+    <a href="#">Link 2</a>
+    <a href="#">References</a>
+  </div>
+</div>
+
+<div class="main">
+	<h1>Trust Engine References</h1>
+	<p>UNDER CONSTRUCTION!!</p>
+	</div>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+</html>
