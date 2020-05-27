@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Zero Trust Network"
+title: "Leggo my egoo!"
 date: 2020-05-30
 ---
 
-Where will this land I wonder????
+Hello World!
