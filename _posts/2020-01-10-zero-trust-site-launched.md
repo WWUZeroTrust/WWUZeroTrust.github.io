@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Zero Trust Network"
+title: "Most Recent News"
 date: 2020-01-10
 ---
 
