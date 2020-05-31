@@ -1,9 +1,18 @@
 ---
 layout: post
-title: "Project Update #1"
-date: 2020-05-20
+title: "Zero Trust Updated Project Overview"
+date: 2020-03-20
 ---
-# Project Update #1 March 20th 2020
+# Zero Trust Updated Project Overview March 20th 2020
+
+Network Data Flow Overview
+
+Below are two different depictions of the data flow in our network. They essentially represent the same structure but in two different formats.
+
+ <img src="/image/oldzerotrustdataflow2.jpg" alt="hi" class="inline" height="781" width="1021"/>
+ 
+ <img src="/image/oldZeroTrustDataFlow.JPG" alt="hi" class="inline" height="635" width="1002"/>
+
 ## Winter Quarter Initial Plan 
 
 Going into winter quarter we were determined to make up lost ground from the previous quarter. Having previously met with the CS department and having a received written promise of dedicated hardware with which to build our project, we patiently waited for a response at the beginning of the quarter. After reaching out several times through several different channels of communication, we finally received the dedicated hardware promised to us during Fall quarter, only three weeks into Winter quarter.  
