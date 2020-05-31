@@ -31,7 +31,7 @@ Control Plane (Phase 2):
         Network Agents 
         Public Key Infrastructure (X.509 standard) 
   
- <img src="/image/ZTN Topology.jpg" alt="hi" class="inline" height="500" width="950"/>
+ <img src="/image/ZTN Topology.jpg" alt="hi" class="inline" height="531" width="671"/>
   
   Equipment/Resources:  
         2x 6 core AMD w/ 16 GB servers 
@@ -44,13 +44,13 @@ Control Plane (Phase 2):
         
  Fall Schedule
     
-  <img src="/image/fall responsibilites.JPG" alt="hi" class="inline" height="500" width="950"/>
+  <img src="/image/fall responsibilites.JPG" alt="hi" class="inline" height="459" width="682"/>
  
  Winter Schedule
  
-  <img src="/image/winterschedule.JPG" alt="hi" class="inline" height="500" width="950"/>
+  <img src="/image/winterschedule.JPG" alt="hi" class="inline" height="356" width="682"/>
  
  Spring Schedule
  
-  <img src="/image/springschedule.JPG" alt="hi" class="inline" height="500" width="950"/>
+  <img src="/image/springschedule.JPG" alt="hi" class="inline" height="391" width="683"/>
 
