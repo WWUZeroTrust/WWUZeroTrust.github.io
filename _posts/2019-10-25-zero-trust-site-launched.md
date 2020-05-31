@@ -12,8 +12,6 @@ Goals:
 
 3.) Develop standards for Network Agent implementations as well as Trust Engines.
 
-Scope: 
-
    Technology stack: 
 
    Data Plane (Phase 1): 
