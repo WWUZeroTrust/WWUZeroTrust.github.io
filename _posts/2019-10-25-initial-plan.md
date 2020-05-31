@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Inital Plan"
+title: "Initial Plan"
 date: 2019-10-25
 ---
 
