@@ -23,7 +23,7 @@ body {
   font-size: 15px
 }
 
-.sidenav a, .dropdown-btn {
+.sidenav a {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   font-weight: bold;
   padding: 10px 12px 10px 20px;
@@ -40,7 +40,7 @@ body {
   font-size: 15px
 }
 
-.sidenav a:hover, .dropdown-btn:hover {
+.sidenav a:hover {
   text-decoration: underline;
 }
 
@@ -53,15 +53,7 @@ body {
   background-color: SlateGray;
   color: white;
 }
-.dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
-}
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 15px;}
@@ -75,30 +67,11 @@ h1 {
 <body>
 
 <div class="sidenav">
-   <a href="/">Home</a>
-	<button class="dropdown-btn"><b>Policy Engine</b>
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/PolicyEngine/diagram">Diagram</a>
-    <a href="#">Link 2</a>
-    <a href="/PolicyEngine/reference">References</a>
-  </div>
-	<button class="dropdown-btn"><b>Trust Engine</b>
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/TrustEngine/diagram">Diagram</a>
-    <a href="#">Link 2</a>
-    <a href="/TrustEngine/reference">References</a>
-  </div>
-	<button class="dropdown-btn"></b>Network Agent</b>
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/NetworkAgent/diagram">Diagram</a>
-    <a href="#">Link 2</a>
-    <a href="/NetworkAgent/reference">References</a>
+  <a href="/">Home</a>
+  <a href="/Documentation">Overview</a>
+  <a href="/PolicyEngine">Policy Engine</a>
+  <a href="/TrustEngine">Trust Engine</a>
+  <a href="/NetworkAgent">Network Agent</a>
   </div>
 </div>
 
@@ -106,21 +79,4 @@ h1 {
 	<h1>Network Agent</h1>
 	<p>UNDER CONSTRUCTION!!</p>
 	</div>
-<script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
-  });
-}
-</script>
 </html>
