@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Project Update #1"
-date: 2019-05-20
+date: 2020-05-20
 ---
 # Project Update #1 March 20th 2020
 ## Winter Quarter Initial Plan 
@@ -23,13 +23,13 @@ As of March 13th, 2020, we have the design of our network, all the machines are 
 
  <img src="/image/winter_quarter_updated.png" alt="hi" class="inline" height="697" width="621"/>
 
-Update for the Trust Engine
+## Update for the Trust Engine
 
  <img src="/image/Trust_Engine_revised.jpg" alt="hi" class="inline" height="751" width="1001"/>
 
 Above is our design for the trust engine as of March 13th, 2020 and a more technical specification is available in the Zero Trust Specifications document attached with this one.  
 
-Update for the Network Agent
+## Update for the Network Agent
 
 The application we have selected for our Network agents is an application layer edge router called traefik. This application acts as a proxy and router all in one service, first it will grab incoming requests routing to our internal or external services. Then it will force them through the entrypoint defined by traefik, which it can discover and automatically route requests towards. Next the middlewares begin to transfer the traffic to different services detailed below. 
 
@@ -47,16 +47,19 @@ The Next middleware will be AuthForward which forwards the authentication to a s
 
 
 https://docs.traefik.io/assets/img/middleware/authforward.png
-Update for the Policy Agent
 
-Open Policy Agent Process Flow 
+## Update for the Policy Agent
+
+### Open Policy Agent Process Flow 
+
 image 4
+
 The OPA receives data from traefik such as the user, action, resource, and trust score. It uses this data to compare it to a Rego policy script that acts as a Role-Based Access Control list. If it fits in the approved policy, it will modify the pfSense firewall rules and allow passage to the resources behind the firewall. 
 
-Conclusion 
+## Conclusion 
 With the slow start to Winter quarter a lot of our planning had to be abandoned in order for a more streamlined and direct implementation of our systems and services. This meant that we had to identify areas of work that would simply take too much time to complete with the deadlines set forth. As such we were not able to progress as far as we had planned and make as much meaningful progress during this work period. Our shortcomings have forced us to more closely examine our plans moving forward into Spring quarter and reassess the outcomes of this project. We have decided that instead of a fully implemented and working network as outlined in our initial plan Fall quarter, it would be wiser to develop systems that can serve as a Proof of Concept to fulfil the ideals of Zero Trust Networking. This way our final product can more accurately reflect the goal we all set out to achieve at the inception of this project and that is an open-sourced implementation of Zero Trust that can be replicated by others. 
 
-References
+## References
 Gilman, Evan, and Doug Barth. Zero Trust Networks: Building Secure Systems in Untrusted Networks. OReilly Media, 2017. (1) 
 
 
