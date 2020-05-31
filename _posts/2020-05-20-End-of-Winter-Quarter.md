@@ -35,25 +35,26 @@ The application we have selected for our Network agents is an application layer 
 
  <img src="/image/traefik1.png" alt="hi" class="inline" height="406" width="808"/>
  
-[Traefik Middleware Overview Source]<https://docs.traefik.io/middlewares/overview/>
+[Traefik Middleware Overview Source](https://docs.traefik.io/middlewares/overview/)
 The specific middleware we are going to be using is first BasicAuth which asks the user to sign in using a username and password combo as demonstrated below: 
 
  <img src="/image/traefik2.png" alt="hi" class="inline" height="203" width="724"/>
  
-[Traefik Middleware BasicAuth Source]https://docs.traefik.io/middlewares/basicauth/
+[Traefik Middleware BasicAuth Source](https://docs.traefik.io/middlewares/basicauth/)
 After this middleware we will use the redirect middleware to push the user to our specific image of osquery which will connect back and give data to the Trust Engine for use in calculating the trust score. 
 
 The Next middleware will be AuthForward which forwards the authentication to a server before sending it to the service as seen below. That authentication server will be the Open Policy agent/Firewall combination. 
 
-<img src="/image/OPA_Diagram.png" alt="hi" class="inline" height="871" width="793"/>
 
-[Traefik Middleware AuthForward Source]<https://docs.traefik.io/assets/img/middleware/authforward.png>
+ <img src="/image/	Traefik3.png" alt="hi" class="inline" height="181" width="638"/>
+ 
+[Traefik Middleware AuthForward Source](https://docs.traefik.io/assets/img/middleware/authforward.png)
 
 ## Update for the Policy Agent
 
 ### Open Policy Agent Process Flow 
 
-image 4
+<img src="/image/OPA_Diagram.png" alt="hi" class="inline" height="871" width="793"/>
 
 The OPA receives data from traefik such as the user, action, resource, and trust score. It uses this data to compare it to a Rego policy script that acts as a Role-Based Access Control list. If it fits in the approved policy, it will modify the pfSense firewall rules and allow passage to the resources behind the firewall. 
 
