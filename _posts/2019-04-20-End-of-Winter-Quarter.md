@@ -10,7 +10,7 @@ Going into winter quarter we were determined to make up lost ground from the pre
 
 Most, if not all, of the actual technical work completed during the Fall quarter had to be discarded when we realized that the machine images, we had created using VMware would not transfer into Proxmox. This was the first of many hurdles we would face throughout the quarter. We also had a lot of difficulties getting Proxmox set up since all of us were unfamiliar with it, which set us back a couple of weeks. Trying to balance both school and work got the better of most of us as well and it became easy to push back deadlines as we struggled through our classes this quarter.  
 
- <img src="/image/Trust_Engine_revised.jpg" alt="hi" class="inline" height="621" width="345"/>
+ <img src="/image/winter_quarter_initial.png" alt="hi" class="inline" height="621" width="345"/>
 
 ## Winter Quarter Revised Plan 
 The goals of our project have not changed. We intend to build a functional network that implements the tenets of a Zero Trust model. Our setbacks were initially because we did not receive our Proxmox server from the CS department until the third week of Winter Quarter. We initially expected to receive those resources at the beginning of the quarter.  
@@ -21,7 +21,7 @@ We will use the tool Traefik as the Network agent element of the control plane. 
 
 As of March 13th, 2020, we have the design of our network, all the machines are created in our Proxmox instance and we are beginning to work on all of them. We have the Open Policy Agent up and running, as well as the connection between a test osquery machine and the instance of fleet on the Trust Engine. We are still creating the script for scoring the results that osquery will return to us, as well as still implementing the Network Agent with traefik.  
 
- <img src="/image/winter_quarter_initial.png" alt="hi" class="inline" height="621" width="697"/>
+ <img src="/image/winter_quarter_updated.png" alt="hi" class="inline" height="621" width="697"/>
 
 Update for the Trust Engine
 
