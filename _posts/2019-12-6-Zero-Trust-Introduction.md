@@ -18,9 +18,13 @@ The solution becomes simple for both our metaphor and modern networks when exami
 
 The deliverables for this quarter were going to be a full working network using hardware we owned, specifically two physical servers, connected to the computer science department network.  We met with Dan Van Pelt, the senior system administrator for the CS department network, on October 25th, 2019 where he told us they could not host our physical servers. Dan informed us that they would give us virtual servers and allow us to access them at the start of Winter Quarter. This significantly delayed our timeline, by our estimate it pushed us back for the whole quarter. Additionally, we lost some element of control of our project by outsourcing physical management of the machines to the CS department. Below is the topology and timeline of our initial plan for the quarter: 
 
+<p align="center">
 <img src="/image/fall responsibilites.JPG" alt="hi" class="inline" height="450" width="634"/>
+</p>
 
+<p align="center">
 <img src="/image/ZTN Topology.jpg" alt="hi" class="inline" height="450" width="634"/>
+</p>
 
 ## Revised plan 
 
@@ -30,11 +34,11 @@ In order to recover from these setbacks, we were determined to make progress on 
 <img src="/image/revisedtopology.JPG" alt="hi" class="inline" height="442" width="623"/>
 </p>
 
-Orange indicates not completed items 
+Orange indicates not completed items and Green indicates completed items 
 
-Green indicates completed items 
-
+<p align="center">
 <img src="/image/revisedfallplan.JPG" alt="hi" class="inline" height="442" width="623"/>
+</p>
 
 ## Elements of a Zero Trust Network 
 
