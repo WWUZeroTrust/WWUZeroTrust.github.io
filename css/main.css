@@ -9,6 +9,8 @@ nav ul {
     list-style: none;
     font-weight: bold;
     background: black;
+    width: 20%;
+    text-align: center;
 }
 footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
