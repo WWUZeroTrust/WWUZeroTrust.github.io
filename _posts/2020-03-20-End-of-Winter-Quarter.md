@@ -5,14 +5,6 @@ date: 2020-03-20
 ---
 # Zero Trust Updated Project Overview March 20th 2020
 
-## Network Data Flow Overview
-
-Below are two different depictions of the data flow in our network. They essentially represent the same structure but in two different formats.
-
- <img src="/image/oldzerotrustdataflow2.jpg" alt="hi" class="inline" height="781" width="1021"/>
- 
- <img src="/image/oldZeroTrustDataFlow.JPG" alt="hi" class="inline" height="635" width="1002"/>
-
 ## Winter Quarter Initial Plan 
 
 Going into winter quarter we were determined to make up lost ground from the previous quarter. Having previously met with the CS department and having a received written promise of dedicated hardware with which to build our project, we patiently waited for a response at the beginning of the quarter. After reaching out several times through several different channels of communication, we finally received the dedicated hardware promised to us during Fall quarter, only three weeks into Winter quarter.  
@@ -68,6 +60,14 @@ The Next middleware will be AuthForward which forwards the authentication to a s
 <img src="/image/OPA_Diagram.png" alt="hi" class="inline" height="871" width="793"/>
 
 The OPA receives data from traefik such as the user, action, resource, and trust score. It uses this data to compare it to a Rego policy script that acts as a Role-Based Access Control list. If it fits in the approved policy, it will modify the pfSense firewall rules and allow passage to the resources behind the firewall. 
+
+## Network Data Flow Overview
+
+Below are two different depictions of the data flow in our network. They essentially represent the same structure but in two different formats.
+
+ <img src="/image/oldzerotrustdataflow2.jpg" alt="hi" class="inline" height="781" width="1021"/>
+ 
+ <img src="/image/oldZeroTrustDataFlow.JPG" alt="hi" class="inline" height="635" width="1002"/>
 
 ## Conclusion 
 With the slow start to Winter quarter a lot of our planning had to be abandoned in order for a more streamlined and direct implementation of our systems and services. This meant that we had to identify areas of work that would simply take too much time to complete with the deadlines set forth. As such we were not able to progress as far as we had planned and make as much meaningful progress during this work period. Our shortcomings have forced us to more closely examine our plans moving forward into Spring quarter and reassess the outcomes of this project. We have decided that instead of a fully implemented and working network as outlined in our initial plan Fall quarter, it would be wiser to develop systems that can serve as a Proof of Concept to fulfil the ideals of Zero Trust Networking. This way our final product can more accurately reflect the goal we all set out to achieve at the inception of this project and that is an open-sourced implementation of Zero Trust that can be replicated by others. 
