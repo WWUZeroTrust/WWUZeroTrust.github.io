@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "End of Fall Quarter"
+title: "End of Fall Quarter Documentation"
 date: 2019-12-6
 ---
 
-Introduction 
+Introduction to Zero Trust Networks
 
 Since the early 80’s when the first network, the ARPANET was created, we’ve always likened their interconnectivity to a neighborhood. We have our houses which are the individual computers, our post office which is the way we deliver messages between our houses, the roads which connect those houses are the ethernet cables, and the laws which govern how we drive are similar to protocols and so on.  In this metaphor gated communities would be businesses, since there was a gate to keep out unknown people everyone within the community could trust everyone and freely walk throughout each other's houses. They would be able to forego locks on their doors, share kitchens and amenities with each other and it would truly be a paradise. However, if a malicious person climbed the gate or somehow gained access to this community, well they would have the run of it. They could walk through people's houses taking what they wanted, and no one would think twice, after all once they were within the gates of the community they were trusted. This describes the problem facing enterprises in the modern era of the internet, especially when you have services hosted by third parties, heavily outsourced web applications, and convoluted supply chains.
 
