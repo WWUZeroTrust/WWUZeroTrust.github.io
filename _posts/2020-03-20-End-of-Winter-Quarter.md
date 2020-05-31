@@ -5,7 +5,7 @@ date: 2020-03-20
 ---
 # Zero Trust Updated Project Overview March 20th 2020
 
-Network Data Flow Overview
+## Network Data Flow Overview
 
 Below are two different depictions of the data flow in our network. They essentially represent the same structure but in two different formats.
 
