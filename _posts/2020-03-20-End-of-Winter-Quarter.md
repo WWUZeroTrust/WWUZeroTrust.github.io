@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Zero Trust Updated Project Overview"
+title: "Zero Trust: Updated Project Overview"
 date: 2020-03-20
 ---
 # Zero Trust Updated Project Overview March 20th 2020
