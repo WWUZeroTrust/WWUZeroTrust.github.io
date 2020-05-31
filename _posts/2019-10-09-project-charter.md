@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Inital Plan"
+title: "Project Charter"
 date: 2019-10-09
 ---
 Blog #1 October 9th 2019 
