@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Project Update #1"
-date: 2019-04-20
+date: 2019-05-20
 ---
 # Project Update #1 March 20th 2020
 ## Winter Quarter Initial Plan 
@@ -34,10 +34,12 @@ Update for the Network Agent
 The application we have selected for our Network agents is an application layer edge router called traefik. This application acts as a proxy and router all in one service, first it will grab incoming requests routing to our internal or external services. Then it will force them through the entrypoint defined by traefik, which it can discover and automatically route requests towards. Next the middlewares begin to transfer the traffic to different services detailed below. 
 
  <img src="/image/traefik1.png" alt="hi" class="inline" height="808" width="406"/>
+ 
 https://docs.traefik.io/middlewares/overview/
 The specific middleware we are going to be using is first BasicAuth which asks the user to sign in using a username and password combo as demonstrated below: 
 
  <img src="/image/traefik2.png" alt="hi" class="inline" height="724" width="203"/>
+ 
 https://docs.traefik.io/middlewares/basicauth/
 After this middleware we will use the redirect middleware to push the user to our specific image of osquery which will connect back and give data to the Trust Engine for use in calculating the trust score. 
 
