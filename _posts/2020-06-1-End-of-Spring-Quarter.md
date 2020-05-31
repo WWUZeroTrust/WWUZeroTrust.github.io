@@ -12,4 +12,4 @@ date: 2020-06-01
 
 ## Data Flow
 
-<img src="/image/Flowchart.png" alt="hi" class="inline" height="834" width="1600"/>
+<img src="/image/Flowchart.png" alt="hi" class="inline" height="834" width="1800"/>
