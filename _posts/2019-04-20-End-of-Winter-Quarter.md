@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Project Update #1"
-date: 2019-10-09
+date: 2019-04-20
 ---
 # Project Update #1 March 20th 2020
 ## Winter Quarter Initial Plan 
