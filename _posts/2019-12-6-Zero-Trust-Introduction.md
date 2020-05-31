@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "End of Fall Quarter Documentation"
+title: "Zero Trust Introduction: Initial Project Overview"
 date: 2019-12-6
 ---
 
