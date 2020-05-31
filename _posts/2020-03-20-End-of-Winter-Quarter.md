@@ -3,7 +3,6 @@ layout: post
 title: "Zero Trust: Updated Project Overview"
 date: 2020-03-20
 ---
-# Zero Trust Updated Project Overview March 20th 2020
 
 ## Winter Quarter Initial Plan 
 
@@ -11,7 +10,9 @@ Going into winter quarter we were determined to make up lost ground from the pre
 
 Most, if not all, of the actual technical work completed during the Fall quarter had to be discarded when we realized that the machine images, we had created using VMware would not transfer into Proxmox. This was the first of many hurdles we would face throughout the quarter. We also had a lot of difficulties getting Proxmox set up since all of us were unfamiliar with it, which set us back a couple of weeks. Trying to balance both school and work got the better of most of us as well and it became easy to push back deadlines as we struggled through our classes this quarter.  
 
+<p align="center">
  <img src="/image/winter_quarter_initial.png" alt="hi" class="inline" height="345" width="621"/>
+</p>
 
 ## Winter Quarter Revised Plan 
 The goals of our project have not changed. We intend to build a functional network that implements the tenets of a Zero Trust model. Our setbacks were initially because we did not receive our Proxmox server from the CS department until the third week of Winter Quarter. We initially expected to receive those resources at the beginning of the quarter.  
@@ -22,11 +23,15 @@ We will use the tool Traefik as the Network agent element of the control plane. 
 
 As of March 13th, 2020, we have the design of our network, all the machines are created in our Proxmox instance and we are beginning to work on all of them. We have the Open Policy Agent up and running, as well as the connection between a test osquery machine and the instance of fleet on the Trust Engine. We are still creating the script for scoring the results that osquery will return to us, as well as still implementing the Network Agent with traefik.  
 
+<p align="center">
  <img src="/image/winter_quarter_updated.png" alt="hi" class="inline" height="697" width="621"/>
+</p>
 
 ## Update for the Trust Engine
 
+<p align="center">
  <img src="/image/Trust_Engine_revised.jpg" alt="hi" class="inline" height="751" width="1001"/>
+</p>
 
 Above is our design for the trust engine as of March 13th, 2020 and a more technical specification is available in the Zero Trust Specifications document attached with this one.  
 
@@ -34,13 +39,17 @@ Above is our design for the trust engine as of March 13th, 2020 and a more techn
 
 The application we have selected for our Network agents is an application layer edge router called traefik. This application acts as a proxy and router all in one service, first it will grab incoming requests routing to our internal or external services. Then it will force them through the entrypoint defined by traefik, which it can discover and automatically route requests towards. Next the middlewares begin to transfer the traffic to different services detailed below. 
 
+<p align="center">
  <img src="/image/traefik1.png" alt="hi" class="inline" height="406" width="808"/>
+</p>
  
 [Traefik Middleware Overview Source](https://docs.traefik.io/middlewares/overview/)
 
 The specific middleware we are going to be using is first BasicAuth which asks the user to sign in using a username and password combo as demonstrated below: 
 
+<p align="center">
  <img src="/image/traefik2.png" alt="hi" class="inline" height="203" width="724"/>
+</p>
  
 [Traefik Middleware BasicAuth Source](https://docs.traefik.io/middlewares/basicauth/)
 
@@ -48,8 +57,9 @@ After this middleware we will use the redirect middleware to push the user to ou
 
 The Next middleware will be AuthForward which forwards the authentication to a server before sending it to the service as seen below. That authentication server will be the Open Policy agent/Firewall combination. 
 
-
+<p align="center">
  <img src="/image/Traefik3.png" alt="hi" class="inline" height="181" width="638"/>
+</p>
  
 [Traefik Middleware AuthForward Source](https://docs.traefik.io/assets/img/middleware/authforward.png)
 
@@ -57,7 +67,9 @@ The Next middleware will be AuthForward which forwards the authentication to a s
 
 ### Open Policy Agent Process Flow 
 
+<p align="center">
 <img src="/image/OPA_Diagram.png" alt="hi" class="inline" height="871" width="793"/>
+</p>
 
 The OPA receives data from traefik such as the user, action, resource, and trust score. It uses this data to compare it to a Rego policy script that acts as a Role-Based Access Control list. If it fits in the approved policy, it will modify the pfSense firewall rules and allow passage to the resources behind the firewall. 
 
@@ -65,14 +77,16 @@ The OPA receives data from traefik such as the user, action, resource, and trust
 
 Below are two different depictions of the data flow in our network. They essentially represent the same structure but in two different formats.
 
+<p align="center">
  <img src="/image/oldzerotrustdataflow2.jpg" alt="hi" class="inline" height="781" width="1021"/>
- 
+</p>
+
+<p align="center">
  <img src="/image/oldZeroTrustDataFlow.JPG" alt="hi" class="inline" height="635" width="1002"/>
+</p>
 
 ## Conclusion 
 With the slow start to Winter quarter a lot of our planning had to be abandoned in order for a more streamlined and direct implementation of our systems and services. This meant that we had to identify areas of work that would simply take too much time to complete with the deadlines set forth. As such we were not able to progress as far as we had planned and make as much meaningful progress during this work period. Our shortcomings have forced us to more closely examine our plans moving forward into Spring quarter and reassess the outcomes of this project. We have decided that instead of a fully implemented and working network as outlined in our initial plan Fall quarter, it would be wiser to develop systems that can serve as a Proof of Concept to fulfil the ideals of Zero Trust Networking. This way our final product can more accurately reflect the goal we all set out to achieve at the inception of this project and that is an open-sourced implementation of Zero Trust that can be replicated by others. 
 
-## References
+## Sources
 Gilman, Evan, and Doug Barth. Zero Trust Networks: Building Secure Systems in Untrusted Networks. OReilly Media, 2017. (1) 
-
-
