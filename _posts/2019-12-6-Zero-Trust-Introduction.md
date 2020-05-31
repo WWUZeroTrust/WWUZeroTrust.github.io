@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Zero Trust Introduction: Initial Project Overview"
+title: "Zero Trust: Initial Project Overview"
 date: 2019-12-6
 ---
 
