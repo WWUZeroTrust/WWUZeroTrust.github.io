@@ -21,7 +21,7 @@ We will use the tool Traefik as the Network agent element of the control plane. 
 
 As of March 13th, 2020, we have the design of our network, all the machines are created in our Proxmox instance and we are beginning to work on all of them. We have the Open Policy Agent up and running, as well as the connection between a test osquery machine and the instance of fleet on the Trust Engine. We are still creating the script for scoring the results that osquery will return to us, as well as still implementing the Network Agent with traefik.  
 
- <img src="/image/Trust_Engine_revised.jpg" alt="hi" class="inline" height="621" width="697"/>
+ <img src="/image/winter_quarter_initial.png" alt="hi" class="inline" height="621" width="697"/>
 
 Update for the Trust Engine
 
