@@ -24,17 +24,17 @@ The time between when a user is interacting with their computer and when the use
 6. The Trust Engine ingests data from elasticsearch and uses the query fields to determine a trust score. The Trust Engine only requests
 data from Elasticsearch when triggered by the Trus API Handler seeking validation of a specific user.
 
-<ol type="a">
-   <li>A. The users goes to log into the secured application and Authelia verifies the user via their username and password.</li>
-   <li>B. After the user is validated the traffic is redirected the web proxy Traefik.</li>
-   <li>C. Traefik forwards the request to the Swissknife Handler.</li>
-   <li>D. The Swissknife Handler </li>
-   <li>E.</li>
-   <li>F.</li>
-   <li>G.</li>
-   <li>H.</li>
-   <li>I.</li>
-   <li>J.</li>
+<ol type="A">
+   <li> The users goes to log into the secured application and Authelia verifies the user via their username and password.</li>
+   <li> After the user is validated the traffic is redirected the web proxy Traefik.</li>
+   <li> Traefik forwards the request to the Swissknife Handler.</li>
+   <li> The Swissknife Handler </li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
 </ol>
 
 <img src="/image/Flowchart.png" alt="hi" class="inline" height="834" width="1414"/>
