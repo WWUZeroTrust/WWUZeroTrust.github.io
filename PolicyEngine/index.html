@@ -101,7 +101,7 @@ a:hover {
 	<h1>Policy Engine</h1>
 	
 	<p><center><img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/></center>
-<p>Our policy engine uses Open Policy Agent which is an open source unified toolset for policy. OPA uses the rego language, similar to GO, to evaluate policy decisions. Our policy engine uses role based access control that are tied with needed scores to access a resource. Example:</p>
+<p>Our policy engine uses Open Policy Agent, which is an open source unified toolset for policy. OPA uses the rego language, similar to GO, to evaluate policy decisions. The policy engine uses role based access control. Example:</p>
 <p>"John": ["hr","engineering","webdev"]</p>
 <p>"engineering": [{"action": "read",  "object": "server123", "score": "60"}]</p>
 <p>The user John has access to the groups hr, engineering, and webdev. The engineering group takes in the action the user wants to perform, the resource on the network they are using, and minimum needed score.</p>
