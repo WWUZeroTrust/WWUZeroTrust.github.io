@@ -75,25 +75,25 @@ h1 {
   		<img src="/image/Flowchart.png" alt="hi" class="inline" height="500" width="950"/>
 	</p>
 	<p>
-1. Kolide Fleet server runs a scheduled query pack on the client machine that already has osquery installed on it.
-2. The queried data is delivered to the Kolide Fleet server.
-3. Log file data from Kolide is shipped by Filebeat to Logstash. If there are multiple servers then each would have a Filebeat agent on it.
-4. Logstash aggregates the data recieved from Filebeat and sends it to Elasticseach.
-5. Elasticsearch holds the JSON formatted data under the index: osquery-result-yyyy-mm-dd. The data can be viewed in Kibana.
-6. The Trust Engine ingests data from elasticsearch and uses the query fields to determine a trust score. The Trust Engine only requests
-data from Elasticsearch when triggered by the Trus API Handler seeking validation of a specific user.
+		1. Kolide Fleet server runs a scheduled query pack on the client machine that already has osquery installed on it.
+		2. The queried data is delivered to the Kolide Fleet server.
+		3. Log file data from Kolide is shipped by Filebeat to Logstash. If there are multiple servers then each would have a Filebeat agent on it.
+		4. Logstash aggregates the data recieved from Filebeat and sends it to Elasticseach.
+		5. Elasticsearch holds the JSON formatted data under the index: osquery-result-yyyy-mm-dd. The data can be viewed in Kibana.
+		6. The Trust Engine ingests data from elasticsearch and uses the query fields to determine a trust score. The Trust Engine only requests
+		data from Elasticsearch when triggered by the Trus API Handler seeking validation of a specific user.
 
-<ol type="A">
-   <li> The users goes to log into the secured application and Authelia verifies the user via their username and password.</li>
-   <li> After the user is validated the traffic is redirected the web proxy Traefik.</li>
-   <li> Traefik forwards the request to the Swissknife Handler.</li>
-   <li> The Swissknife Handler </li>
-   <li></li>
-   <li></li>
-   <li></li>
-   <li></li>
-   <li></li>
-   <li></li>
-</ol>
-</p>
+	<ol type="A">
+ 		<li> The users goes to log into the secured application and Authelia verifies the user via their username and password.</li>
+  		<li> After the user is validated the traffic is redirected the web proxy Traefik.</li>
+   		<li> Traefik forwards the request to the Swissknife Handler.</li>
+   		<li> The Swissknife Handler </li>
+   		<li></li>
+   		<li></li>
+  		<li></li>
+  		<li></li>
+  	 	<li></li>
+  		<li></li>
+	</ol>
+	</p>
 </html>
