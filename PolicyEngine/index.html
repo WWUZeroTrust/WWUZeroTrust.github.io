@@ -101,6 +101,13 @@ a:hover {
 	<h1>Policy Engine</h1>
 	
 	<p><center><img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/></center>
+Our policy engine uses Open Policy Agent which is an open source unified toolset for policy. OPA uses the rego language, similar to GO, to evaluate policy decisions. Our policy engine uses role based access control that are tied with needed scores to access a resource. Example:
+"John": ["hr","engineering","webdev"]
+"engineering": [{"action": "read",  "object": "server123", "score": "60"}]
+The user John has access to the groups hr, engineering, and webdev. The engineering group takes in the action the user wants to perform, the resource on the network they are using, and minimum needed score.
+
+Because there is a lot of data that needs to be processed before our policy engine can make a decision. Therefore we have a “handler”. This handler uses flask for python to create an API for the facilitation of passed data. See diagram above.  
+
 	</p>
 	</div>
 	<footer>
