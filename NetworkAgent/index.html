@@ -101,6 +101,7 @@ a:hover {
 <div class="main">
 	<h1>Network Agent Diagram</h1>
 	<center><h2>Traefik Middleware Data Flow</h2></center>
+	In order to handle network connections and route requests accordingly through our security measures, we utilized a stack of technology on our frontend, all hosted on Docker.  
 	<img src="/image/Flowchart_Traefik_NetworkAgent.png" alt="hi" class="inline" height="500" width="950"/>
 	This all begins with Authelia, our single sign on service in a container which works in tandem with Traefik to incoming connections to any of our sites and redirect the user to login before accessing any applications. Traefik handles this by enforcing the AuthForward middleware which pushes authentication and authorization to a third-party service that returns an allow or deny response. As detailed below:
 	<img src="/image/Traefik3.png" alt="hi" class="inline" height="181" width="638"/>
