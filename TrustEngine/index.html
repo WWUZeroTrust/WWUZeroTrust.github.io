@@ -145,8 +145,10 @@ p {
 	</p>
 	
 <table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><td>1. The Trust API Handler, handling a GET request from the Swissknife Handler, takes the username and sends a request to the Trust Engine to get a trust score.</td></tr></thead><tbody>
- <tr><td>2. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</td></tr>
+	
+<thead><tr class="tableizer-firstrow"><td>1. The Swissknife Handler gets a username rorm Traefik. The Swissknife Handler then forwards the username via a PUT request to the Trust API Handler.</td></tr></thead><tbody>
+
+<tr><td>2. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</td></tr>
  <tr><td>3. The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl</a> 
 		package (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
 		the request specified in the query. The first part of the query filters by the username received from the Trust API Handler.
