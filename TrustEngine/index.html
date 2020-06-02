@@ -134,25 +134,25 @@ p {
 	</p>
 		
 	<h2>ELK Stack and Trust Engine Overview</h2>
-	<p>The ELK Stack acts as a collecter and organizer of osquery data so that the Trust Engine can with ease make queries against Elasticsearch.
+	<p>The ELK Stack acts as a collecter and organizer of osquery data so that the Trust Engine can with ease make queries against Elasticsearch.</p>
 		
 	
   	<img src="/image/Flowchart_ELK_TE.png" alt="hi" class="inline" height="500" width="950"/>
 		
-	The ELK Stack consists of Logstash, Elasticsearch, Kibana, and in addition Filebeat. When packaged together these applications
+	<p>The ELK Stack consists of Logstash, Elasticsearch, Kibana, and in addition Filebeat. When packaged together these applications
 		take in, aggregate, and hold the osquery data received from the client. This data, in JSON format, is then available for user
 		interact and view on Kibana. The Kibana dashboard interface displays the logs received from the TestOsquery machine.
-		
+	</p>	
 	
   	<img src="/image/Kibana_dashboard_small.JPG" alt="hi" class="inline" height="500" width="750"/>
 		
-	A simple GET request of the index can return detailed information about incoming query logs.
+	<p>A simple GET request of the index can return detailed information about incoming query logs.</p>
 		
 	
   	<img src="/image/Kibana_developer_medium.JPG" alt="hi" class="inline" height="500" width="750"/>
 		
 		
-	The Trust Engine's job is to create a trust score. This trust score works in unison with <a href="https://github.com/open-policy-agent/opa">Open Policy Agent</a> 
+	<p>The Trust Engine's job is to create a trust score. This trust score works in unison with <a href="https://github.com/open-policy-agent/opa">Open Policy Agent</a> 
 		to either allow or deny a user access to a secured application. The Trust Engine takes in JSON format Elasticsearch data
 		and parses it in order to identify the data related to user seeking access.
 		
