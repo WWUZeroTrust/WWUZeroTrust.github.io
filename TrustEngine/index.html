@@ -171,7 +171,7 @@ ol li {
 <ol>
 <li>1. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</li>
 <li>2. Once the Trust API Handler receives a username from the Swissknife Handler via a PUT request, the trust engine starts calculating a score.</li>
-<li>3. The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl 
+<li>3. The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst"></a>elasticsearch_dsl 
 		package (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
 		the request specified in the query. The first part of the query filters by the username received from the Trust API Handler.
 		 Next the query is set to match anything from the osquery pack, 'testpack’. Last, only the 'snapshot' data field is returned
