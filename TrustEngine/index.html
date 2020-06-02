@@ -110,7 +110,7 @@ p {
 	
 	<p>Authorization to sensitive resources require confirmation that the user is who they say they are and that their 
 		activities on the company computer are considered normal behavior. Authentication begins with the user entering their 
-		credentials to log into the the company website. But what if the users credentials were stolen? This is where the Trust
+		credentials to log into the company website. But what if the user's credentials were stolen? This is where the Trust
 		Engine steps in by regularly ingesting data from the company issued device and processing that information into
 		a trust score that can authorize or deny users for access to a secured application.
 	</p>
@@ -122,16 +122,42 @@ p {
 	<p> The client machine is preinstalled with <a href="https://github.com/osquery/osquery">osquery</a>, a tool that turns computer information into a relational 
 		database. A few additional configurations are need as well to enable the client to transmit data to the <a href="https://github.com/kolide/fleet">Kolide Fleet</a> server. The 
 		Kolide Fleet server is a tool used for managing a fleet of clients installed with osquery. Fleet can monitor if clients are
-		active, its verison of osquery, and enable query packs to run on clients. These query packs consist of one or more queries
+		active, its version of osquery, and enable query packs to run on clients. These query packs consist of one or more queries
 		that use pre-built osquery tables to output information about the computer such as active users or running processes. Fleet
 		retrieves the data from the queries run on the clients and then stores the data using Redis and MySQL. We chose these tools because
 		of osquery's ability to quickly produce computer information from a simple query and deliver that information in JSON format.
 	</p>
 		
 	<h2>ELK Stack and Trust Engine Overview</h2>
+	<p> The ELK Stack consists of Logstash, Elasticsearch, Kibana, and in addition Filebeat. When packaged together these applications
+		take in, aggregate, and hold the osquery data received from the client. This data, in JSON format, is then available for user
+		interact and view on Kibana.
+		</p>
 	<p>
   		<img src="/image/Flowchart_ELK_TE.png" alt="hi" class="inline" height="500" width="950"/>
 		</p>
+	<p> 
+		The Trust Engine's job is to create a trust score. This trust score works in unison with <a href="https://github.com/open-policy-agent/opa">Open Policy Agent</a> 
+		to either allow or deny a user access to a secured application. The Trust Engine takes in JSON format Elasticsearch data
+		and parses it in order to identify the data related to user seeking access.
+		
+	Here are the steps taken between Elasticsearch, Trust Engine, and the Trust API Handler:
+	1. The Trust API Handler, handling a GET request from the Swissknife Handler, takes the username and sends a request to the Trust Engine to get a trust score.
+	2. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.
+	3. The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl</a> 
+		package (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
+		the request specified in the query. The first part of the query filters by the username received from the Trust API Handler.
+		 Next the query is set to match anything from the osquery pack, 'testpack’. Last, only the 'snapshot' data field is returned
+		from the query.
+	5. The 'snapshot' data arrives in JSON format and regex is used pull the string data from the fields into lists. One of these queries
+		may contain an array of information. Those arrays and their subsequent fields are each parsed. For instance, the query that
+		contains information of logged in users may have recorded 3 different users from one computer. 
+	6. The data from the lists are then compared to lists of data deemed normal and expected. If there is match, then
+		the score increases for that specific field. If there is not match, then the score decreases. This is done for every field
+		of data attributed to the user. Those multiple field scores are added up to create a trust score.
+	7. The trust score is then sent to the Trust API Handler. The Policy Agent documentation page will cover the next steps.
+	
+	</p>
 	
 	<style type="text/css">
 	table.tableizer-table {
