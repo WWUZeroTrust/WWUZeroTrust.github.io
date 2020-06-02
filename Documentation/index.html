@@ -103,7 +103,7 @@ h1 {
  <tr><td>6. The Trust Engine ingests data from Elasticsearch and uses the query fields to determine a trust score. The Trust Engine only requests data from Elasticsearch when triggered by the Trust API Handler seeking validation of a specific user. </td><td>F. The Trust Engine computes a score and returns it to the Trust API Handler.</td></tr>
  <tr><td></td><td>G. The Trust API Handler sends the score for that username back to the Swissknife Handler.</td></tr>
  <tr><td></td><td>H. The Swissknife Handler queries the <a href="https://github.com/open-policy-agent/opa">Policy Engine (OPA)</a> with the username, resource the user is accessing, and the score.</td></tr>
- <tr><td></td><td>I. The Policy Engine then returns a decision based on the defined policies of allow or deny to the Swissknife Handler.</td></tr>
+ <tr><td></td><td>I. The Policy Engine then makes a decision based on the defined policies. It will return allow or deny to the Swissknife Handler.</td></tr>
  <tr><td></td><td>J. The Swissknife handler takes this decision and returns it to Traefik.</td></tr>
  <tr><td></td><td>K. Traefik will send the user through to the secure application if it is allowed or respond with a 401 error if it is denied.</td></tr>
 </tbody></table>
