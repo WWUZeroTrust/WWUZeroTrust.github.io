@@ -115,8 +115,8 @@ p {
 		a trust score that can authorize or deny users for access to a secured application.
 	</p>
 	
-	<p><center>
-  		<img src="/image/Flowchart_Kolide.png" alt="hi" class="inline" height="500" width="950"/> </center>
+	<p>
+  		<center><img src="/image/Flowchart_Kolide.png" alt="hi" class="inline" height="500" width="950"/> </center>
 	</p>
 		
 	<p>The client machine is preinstalled with <a href="https://github.com/osquery/osquery">osquery</a>, a tool that turns computer information into a relational 
@@ -124,8 +124,8 @@ p {
 		Kolide Fleet server is a tool used for managing a fleet of clients installed with osquery. Fleet can monitor if clients are
 		active, its version of osquery, and enable query packs to run on clients.
 	</p>
-	<p><center>
-  		<img src="/image/kolide.JPG" alt="hi" class="inline" height="500" width="750"/></center>
+	<p>
+  		<center><img src="/image/kolide.JPG" alt="hi" class="inline" height="500" width="750"/></center>
 		</p>
 	
 	<p>These query packs consist of one or more queries
@@ -137,20 +137,20 @@ p {
 	<h2>ELK Stack and Trust Engine Overview</h2>
 	<p>The ELK Stack acts as a collecter and organizer of osquery data so that the Trust Engine can with ease make queries against Elasticsearch.
 		</p>
-	<p><center>
-  		<img src="/image/Flowchart_ELK_TE.png" alt="hi" class="inline" height="500" width="950"/></center>
+	<p>
+  		<center><img src="/image/Flowchart_ELK_TE.png" alt="hi" class="inline" height="500" width="950"/></center>
 		</p>
 	<p> The ELK Stack consists of Logstash, Elasticsearch, Kibana, and in addition Filebeat. When packaged together these applications
 		take in, aggregate, and hold the osquery data received from the client. This data, in JSON format, is then available for user
 		interact and view on Kibana. The Kibana dashboard interface displays the logs received from the TestOsquery machine.
 		</p>
-	<p><center>
-  		<img src="/image/Kibana_dashboard_small.JPG" alt="hi" class="inline" height="500" width="750"/></center>
+	<p>
+  		<center><img src="/image/Kibana_dashboard_small.JPG" alt="hi" class="inline" height="500" width="750"/></center>
 		</p>
 	<p> A simple GET request of the index can return detailed information about incoming query logs.
 		</p>
-	<p><center>
-  		<img src="/image/Kibana_developer_medium.JPG" alt="hi" class="inline" height="500" width="750"/></center>
+	<p>
+  		<center><img src="/image/Kibana_developer_medium.JPG" alt="hi" class="inline" height="500" width="750"/></center>
 		</p>
 		
 	<p>The Trust Engine's job is to create a trust score. This trust score works in unison with <a href="https://github.com/open-policy-agent/opa">Open Policy Agent</a> 
