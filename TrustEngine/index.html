@@ -98,6 +98,9 @@ ol {
 ol li {
   padding: 5px;
 }
+div.w {
+  width: 65%; 
+}
 </style>
 </head>
 <body>
@@ -166,8 +169,7 @@ ol li {
 	Here are the steps taken between Elasticsearch, Trust Engine, and the Trust API Handler:
 		</p>
 	
-<table class="tableizer-table">
-<p>
+<div class="w">
 <ol>
 <li>The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</li>
 <li>Once the Trust API Handler receives a username from the Swissknife Handler via a PUT request, the trust engine starts calculating a score.</li>
@@ -185,7 +187,7 @@ ol li {
  <li>The trust score is then sent to the Trust API Handler, and the Trust API Handler pushes it to the Swissknife Handler.</li>
 	<p>The Policy Agent documentation page will cover the next steps.</p>
 	</ol>
-	</p>
+	</div>
 	<style type="text/css">
 	table.tableizer-table {
 		font-size: 11px;
