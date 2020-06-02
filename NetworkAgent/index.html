@@ -128,11 +128,11 @@ a:hover {
 	<br>
 	<br><center><img src="/image/Traefik3.png" alt="hi" class="inline" height="181" width="638"/></center>
 	<br>
-	In order to identify the data and ensure that the correct data gets passed to the Policy and Trust Engines for permission checks and scoring, the username of whoever is signed in has to be passed along with the data sent using AuthForward. Traefik allows for this to be done by chaining middlewares together which will allow us to send headers containing the username used to sign into the service as well as the destination they are trying to reach. Below is a diagram outlining how chaining middlewares work:
+	In order to identify the correct data gets passed to the Policy and Trust Engines for permission checks and scoring, the username of whoever signed in must be passed along with the data sent using AuthForward. Traefik allows for this to be done by chaining middlewares together which will allow us to send headers containing the username used to sign into the service as well as the destination they are trying to reach. Below is a diagram outlining how chaining middlewares work:
 	<br>
 	<br><center><img src="/image/traefik1.png" alt="hi" class="inline" height="406" width="808"/></center>
 	<br>
-	Once the Authforward middleware runs and the headers are forwarded it will wait for a response from the Handler running on the Policy Engine which will return an allow or deny decision from the Policy Engine. In the case of an allow decision the user will be connected to the site and allowed to browse, in the case of a deny decision the site will be blocked from being accessed by the user. 
+	Once the AuthForward middleware runs and the headers are forwarded it will wait for a response from the Handler running on the Policy Engine which will return an allow or deny decision from the Policy Engine. In the case of an allow decision the user will be connected to the site and allowed to browse, in the case of a deny decision the site will be blocked from being accessed by the user. 
 	</p>
 	</div>
 	<footer>
