@@ -86,6 +86,13 @@ a {
 a:hover {
     text-decoration: underline;
 }
+b {
+    text-decoration: none;
+    color: blue;
+}
+b:hover {
+    text-decoration: underline;
+}
 p {
     font-size: 1em;
     line-height: 1.4em;
@@ -175,8 +182,8 @@ div.w {
 <ol>
 <li>The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</li>
 <li>Once the Trust API Handler receives a username from the Swissknife Handler via a PUT request, the trust engine starts calculating a score.</li>
-<li>The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl 
-		package</a> (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
+<li>The Trust Engine using <b href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl 
+		package</b> (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
 		the request specified in the query. The first part of the query filters by the username received from the Trust API Handler.
 		 Next the query is set to match anything from the osquery pack, 'testpack’. Last, only the 'snapshot' data field is returned
 	from the query.</li>
