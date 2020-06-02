@@ -179,10 +179,11 @@ ol li {
  <li>The 'snapshot' data arrives in JSON format and regex is used pull the string data from the fields into lists. One of these queries
 		may contain an array of information. Those arrays and their subsequent fields are each parsed. For instance, the query that
 		contains information of logged in users may have recorded 3 different users from one computer. </li>
- <li>>The data from the lists are then compared to lists of data deemed normal and expected. If there is match, then
+ <li>The data from the lists are then compared to lists of data deemed normal and expected. If there is match, then
 		the score increases for that specific field. If there is not match, then the score decreases. This is done for every field
 		of data attributed to the user. Those multiple field scores are added up to create a trust score.</li>
- <li>>The trust score is then sent to the Trust API Handler, and the Trust API Handler pushes it to the Swissknife Handler. The Policy Agent documentation page will cover the next steps.</li>
+ <li>The trust score is then sent to the Trust API Handler, and the Trust API Handler pushes it to the Swissknife Handler.</li>
+	<p>The Policy Agent documentation page will cover the next steps.</p>
 	</ol>	
 	<style type="text/css">
 	table.tableizer-table {
