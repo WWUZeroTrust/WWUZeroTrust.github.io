@@ -81,17 +81,15 @@ h1 {
 	<h1>Overview</h1>
 	<h2><center>Overview of Zero Trust Systems</center></h2>
 		<p><center>
-		<img src="/image/Zero Trust Network Overview.png" alt="hi" class="inline" height="650" width="900"/>
-			
+		<img src="/image/Zero Trust Network Overview.png" alt="hi" class="inline" height="650" width="900"/>	
 		</p>
-	<h2><center>Data Flow Overview</center></h2>
-	
-	<p>The flow of information travels in two directions from the user. The first is the osquery logs being delivered hourly 
+	<p><center>The flow of information travels in two directions from the user. The first is the osquery logs being delivered hourly 
 		to the Fleet server in order for the Trust Engine to determine a trust score. In the other direction the user is 
 		making an attempt to log into a secured application. If the user has not accessed this resources within a recent 
 		window then traffic will be redirected by the Network Agent to the Policy Engine where the Policy Engine will decide 
 		if the user is granted access based on the users trust score.
 	</p>
+	<h2><center>Data Flow Overview</center></h2>
 	
 	<p><center>
   		<img src="/image/Flowchart.png" alt="hi" class="inline" height="650" width="900"/>
