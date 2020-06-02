@@ -60,7 +60,7 @@ p {
 	a { text-decoration: none; }
 	<style type="text/css">
 	table.tableizer-table {
-		font-size: 12px;
+		font-size: 11px;
 		font-family: Arial, Helvetica, sans-serif;
 		border-collapse: collapse;
 		table-layout: fixed;
@@ -86,21 +86,21 @@ p {
 
 <div class="main">
 	<h1>Overview</h1>
-	<h2><center>Overview of Zero Trust Systems</center></h2>
-		<p><center>
+	<h2>Overview of Zero Trust Systems</h2>
+		
 		<img src="/image/Zero Trust Network Overview.png" alt="hi" class="inline" height="650" width="900"/>	
-		</p>
-	<p><center>The flow of information travels in two directions from the user. The first is the osquery logs being delivered hourly 
+		
+	<p>The flow of information travels in two directions from the user. The first is the osquery logs being delivered hourly 
 		to the Fleet server in order for the Trust Engine to determine a trust score. In the other direction the user is 
 		making an attempt to log into a secured application. If the user has not accessed this resources within a recent 
 		window then traffic will be redirected by the Network Agent to the Policy Engine where the Policy Engine will decide 
 		if the user is granted access based on the users trust score.
 	</p>
-	<h2><center>Data Flow Overview</center></h2>
+	<h2>Data Flow Overview</center></h2>
 	
-	<p><center>
+	
   		<img src="/image/Flowchart.png" alt="hi" class="inline" height="650" width="900"/>
-	</p>
+	
 	<table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><td>1. <a href="https://github.com/kolide/fleet">Kolide Fleet</a> server runs a scheduled query pack on the client machine that already has <a href="https://github.com/osquery/osquery">osquery</a> installed on it.</td><td>A. The users goes to log into the secured application and <a href="https://github.com/authelia/authelia">Authelia</a> authenticates the user via their username and password.</td></tr></thead><tbody>
  <tr><td>2. The queried data is delivered to the Kolide Fleet server.</td><td>B. After the user is authenticated the traffic is redirected the proxy service <a href="https://github.com/containous/traefik/">Traefik</a>.</td></tr>
