@@ -48,7 +48,7 @@ body {
   margin-left: 170px; /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
-  width: 65%;
+  width: 85%;
 }
 .active {
   background-color: SlateGray;
@@ -85,6 +85,12 @@ a {
 a:hover {
     text-decoration: underline;
 }
+p {
+    font-size: 1em;
+    line-height: 1.4em;
+    color: black;
+    width: 65%;
+}
 </style>
 </head>
 <body>
@@ -101,7 +107,7 @@ a:hover {
 <div class="main">
 	<h1>Policy Engine</h1>
 	
-	<p><center><img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/></center>
+<img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/>
 <p>Our policy engine uses Open Policy Agent, which is an open source unified toolset for policy. OPA uses the rego language, similar to GO, to evaluate policy decisions. The policy engine uses role based access control. Example:</p>
 <p>"John": ["hr","engineering","webdev"]</p>
 <p>"engineering": [{"action": "read",  "object": "server123", "score": "60"}]</p>
