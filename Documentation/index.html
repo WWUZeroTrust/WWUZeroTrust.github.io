@@ -57,6 +57,13 @@ p {
     color: black;
     width: 65%;
 }
+b {
+    text-decoration: none;
+    color: blue;
+}
+b:hover {
+    text-decoration: underline;
+}
 	a { text-decoration: none; }
 	<style type="text/css">
 	table.tableizer-table {
@@ -103,14 +110,14 @@ p {
   		<img src="/image/Flowchart.png" alt="hi" class="inline" height="650" width="900"/>
 	
 	<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><td>1. <a href="https://github.com/kolide/fleet">Kolide Fleet</a> server runs a scheduled query pack on the client machine that already has <a href="https://github.com/osquery/osquery">osquery</a> installed on it.</td><td>A. The users goes to log into the secured application and <a href="https://github.com/authelia/authelia">Authelia</a> authenticates the user via their username and password.</td></tr></thead><tbody>
- <tr><td>2. The queried data is delivered to the Kolide Fleet server.</td><td>B. After the user is authenticated the traffic is redirected the proxy service <a href="https://github.com/containous/traefik/">Traefik</a>.</td></tr>
+<thead><tr class="tableizer-firstrow"><td>1. <b href="https://github.com/kolide/fleet">Kolide Fleet</b> server runs a scheduled query pack on the client machine that already has <b href="https://github.com/osquery/osquery">osquery</b> installed on it.</td><td>A. The users goes to log into the secured application and <b href="https://github.com/authelia/authelia">Authelia</b> authenticates the user via their username and password.</td></tr></thead><tbody>
+ <tr><td>2. The queried data is delivered to the Kolide Fleet server.</td><td>B. After the user is authenticated the traffic is redirected the proxy service <b href="https://github.com/containous/traefik/">Traefik</b>.</td></tr>
  <tr><td>3. Log file data from Kolide is shipped by Filebeat to Logstash. If there are multiple servers then each would have a Filebeat agent on it.</td><td>C.Traefik forwards the authorization of the request to the Swissknife Handler.</td></tr>
  <tr><td>4. Logstash aggregates the data received from Filebeat and sends it to Elasticsearch.</td><td>D. The Swissknife Handler accepts the username and the destination from Traefik and forwards the username to the Trust API Handler.</td></tr>
  <tr><td>5. Elasticsearch holds the JSON formatted data under the index: osquery-result-yyyy-mm-dd. The data can be viewed in Kibana.</td><td>E. The Trust API Handler sends the username to the Trust Engine.</td></tr>
  <tr><td>6. The Trust Engine ingests data from Elasticsearch and uses the query fields to determine a trust score. The Trust Engine only requests data from Elasticsearch when triggered by the Trust API Handler seeking validation of a specific user. </td><td>F. The Trust Engine computes a score and returns it to the Trust API Handler.</td></tr>
  <tr><td></td><td>G. The Trust API Handler sends the score for that username back to the Swissknife Handler.</td></tr>
- <tr><td></td><td>H. The Swissknife Handler queries the Policy Engine <a href="https://github.com/open-policy-agent/opa">(OPA)</a> with the username, resource, and the score.</td></tr>
+ <tr><td></td><td>H. The Swissknife Handler queries the Policy Engine <b href="https://github.com/open-policy-agent/opa">(OPA)</b> with the username, resource, and the score.</td></tr>
  <tr><td></td><td>I. The Policy Engine then makes a decision based on the defined policies. It will return allow or deny to the Swissknife Handler.</td></tr>
  <tr><td></td><td>J. The Swissknife handler takes this decision and returns it to Traefik.</td></tr>
  <tr><td></td><td>K. Traefik will send the user through to the secure application if it is allowed or respond with a 401 error if it is denied.</td></tr>
