@@ -92,10 +92,10 @@ h1 {
 <thead><tr class="tableizer-firstrow"><td>1. Kolide Fleet server runs a scheduled query pack on the client machine that already has osquery installed on it.</td><td>A. The users goes to log into the secured application and Authelia authenticates the user via their username and password.</td></tr></thead><tbody>
  <tr><td>2. The queried data is delivered to the Kolide Fleet server.</td><td>B. After the user is authenticated the traffic is redirected the proxy service Traefik.</td></tr>
  <tr><td>3. Log file data from Kolide is shipped by Filebeat to Logstash. If there are multiple servers then each would have a Filebeat agent on it.</td><td>C.Traefik forwards the authorization of the request to the Swissknife Handler.</td></tr>
- <tr><td>4. Logstash aggregates the data recieved from Filebeat and sends it to Elasticseach.</td><td>D.The Swissknife Handler accepts the username and the destination from Traefik and forwards the username to the Trust API Handler.</td></tr>
+ <tr><td>4. Logstash aggregates the data received from Filebeat and sends it to Elasticsearch.</td><td>D. The Swissknife Handler accepts the username and the destination from Traefik and forwards the username to the Trust API Handler.</td></tr>
  <tr><td>5. Elasticsearch holds the JSON formatted data under the index: osquery-result-yyyy-mm-dd. The data can be viewed in Kibana.</td><td>E. The Trust API Handler sends the username to the Trust Engine.</td></tr>
- <tr><td>6. The Trust Engine ingests data from elasticsearch and uses the query fields to determine a trust score. The Trust Engine only requests</td><td>F. The Trust Engine computes a score and returns it to the Trust API Handler.</td></tr>
- <tr><td>7. data from Elasticsearch when triggered by the Trus API Handler seeking validation of a specific user.</td><td>G. The Trust API Handler sends the score for that username back to the Swissknife Handler.</td></tr>
+ <tr><td>6. The Trust Engine ingests data from Elasticsearch and uses the query fields to determine a trust score. The Trust Engine only requests</td><td>F. The Trust Engine computes a score and returns it to the Trust API Handler.</td></tr>
+ <tr><td>7. data from Elasticsearch when triggered by the Trust API Handler seeking validation of a specific user.</td><td>G. The Trust API Handler sends the score for that username back to the Swissknife Handler.</td></tr>
  <tr><td></td><td>H. The Swissknife Handler looks up the permissions in the Policy Engine for that username.</td></tr>
  <tr><td></td><td>I. The Policy Engine then returns a decision based on score and permissions of either allow or deny to the Swissknife Handler.</td></tr>
  <tr><td></td><td>J. The Swissknife handler takes this decision and returns it to Traefik.</td></tr>
