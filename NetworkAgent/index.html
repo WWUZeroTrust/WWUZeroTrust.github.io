@@ -103,35 +103,35 @@ a:hover {
 	<h1>Network Agent</h1>
 	<p>
 	In order to handle network connections and route requests accordingly through our security measures, we utilized a stack of technology on our frontend, all hosted on Docker.  
-	
+	<br>
 	<br><center><img src="/image/Flowchart_Traefik_NetworkAgent.png" alt="hi" class="inline" height="500" width="950"/></center>
-	
+	<br>
 	On our front end we are hosting a webserver using Docker containers running Nginx and PHP for a Wordpress blog site which acts as the main page for our project. As seen below:
-	
+	<br>
 	<br><center><img src="/image/Website.JPG" alt="hi" class="inline" height="626" width="903"/></center>
-		
+	<br>
 	From here we have several links to other services like Portainer which allows us to access containers running on the system and view various information and interact with them. Shown below: 
-		
+	<br>	
 	<br><center><img src="/image/Portainer.JPG" alt="hi" class="inline" height="626" width="903"/></center>
-	
+	<br>
 	Mailhog is another service we host on our site; this service allows users to test their outgoing mail before sending out emails. The dashboard can be seen below:
-	
+	<br>
 	<br><center><img src="/image/Mailhog.JPG" alt="hi" class="inline" height="626" width="903"/></center>
-		
+	<br>
 	These services represent various management and email applications that an IT focused business would host. However, the security of these applications is a concern and if a user browses to one of these services they are authenticated and authorized using our Zero Trust Architecture. 
-	
+	<br>
 	This all begins with Authelia, our single sign on service in a container which works in tandem with Traefik to incoming connections to any of our sites and redirect the user to login before accessing any applications. The login page for Authelia can be seen below: 
-		
+	<br>
 	<br><center><img src="/image/Authelia.JPG" alt="hi" class="inline" height="683" width="1054"/></center>
-		
+	<br>
 	Traefik handles this by enforcing the AuthForward middleware which pushes authentication and authorization to a third-party service, in this case our Policy Engine, that returns an allow or deny response. As shown below: 	
-	
+	<br>
 	<br><center><img src="/image/Traefik3.png" alt="hi" class="inline" height="181" width="638"/></center>
-
+	<br>
 	In order to identify the data and ensure that the correct data gets passed to the Policy and Trust Engines for permission checks and scoring, the username of whoever is signed in has to be passed along with the data sent using AuthForward. Traefik allows for this to be done by chaining middlewares together which will allow us to send headers containing the username used to sign into the service as well as the destination they are trying to reach. Below is a diagram outlining how chaining middlewares work:
-	
+	<br>
 	<br><center><img src="/image/traefik1.png" alt="hi" class="inline" height="406" width="808"/></center>
-	
+	<br>
 	Once the Authforward middleware runs and the headers are forwarded it will wait for a response from the Handler running on the Policy Engine which will return an allow or deny decision from the Policy Engine. In the case of an allow decision the user will be connected to the site and allowed to browse, in the case of a deny decision the site will be blocked from being accessed by the user. 
 	</p>
 	</div>
