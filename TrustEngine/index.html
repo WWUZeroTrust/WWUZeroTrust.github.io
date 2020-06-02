@@ -146,9 +146,9 @@ p {
 	
 <table class="tableizer-table">
 	
-<thead><tr class="tableizer-firstrow"><td>1. The Swissknife Handler gets a username rorm Traefik. The Swissknife Handler then forwards the username via a PUT request to the Trust API Handler.</td></tr></thead><tbody>
+<thead><tr class="tableizer-firstrow"><td>1. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</td></tr></thead><tbody>
 
-<tr><td>2. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</td></tr>
+<tr><td>2. Once the Trust API Handler receives a username from the Swissknife Handler via a PUT request, the trust engine starts calculating a score.</td></tr>
  <tr><td>3. The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl</a> 
 		package (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
 		the request specified in the query. The first part of the query filters by the username received from the Trust API Handler.
@@ -160,7 +160,7 @@ p {
  <tr><td>5. The data from the lists are then compared to lists of data deemed normal and expected. If there is match, then
 		the score increases for that specific field. If there is not match, then the score decreases. This is done for every field
 		of data attributed to the user. Those multiple field scores are added up to create a trust score.</td></tr>
- <tr><td>6. The trust score is then sent to the Trust API Handler. The Policy Agent documentation page will cover the next steps.</td></tr>
+ <tr><td>6. The trust score is then sent to the Trust API Handler, and the Trust API Handler pushes it to the Swissknife Handler. The Policy Agent documentation page will cover the next steps.</td></tr>
 </tbody></table>
 	
 	<style type="text/css">
