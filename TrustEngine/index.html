@@ -91,6 +91,13 @@ p {
     color: black;
     width: 65%;
 }
+ol {
+  padding: 20px;
+}
+
+ol li {
+  padding: 5px;
+}
 </style>
 </head>
 <body>
@@ -160,24 +167,28 @@ p {
 		</p>
 	
 <table class="tableizer-table">
-	
-<thead><tr class="tableizer-firstrow"><td>1. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</td></tr></thead><tbody>
 
-<tr><td>2. Once the Trust API Handler receives a username from the Swissknife Handler via a PUT request, the trust engine starts calculating a score.</td></tr>
- <tr><td>3. The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl</a> 
+	<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol>
+<ol>
+<li>1. The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</li>
+<li>2. Once the Trust API Handler receives a username from the Swissknife Handler via a PUT request, the trust engine starts calculating a score.</li>
+<li>3. The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl 
 		package (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
 		the request specified in the query. The first part of the query filters by the username received from the Trust API Handler.
 		 Next the query is set to match anything from the osquery pack, 'testpack’. Last, only the 'snapshot' data field is returned
-		from the query.</td></tr>
- <tr><td>4. The 'snapshot' data arrives in JSON format and regex is used pull the string data from the fields into lists. One of these queries
+	from the query.</li>
+ <li>4. The 'snapshot' data arrives in JSON format and regex is used pull the string data from the fields into lists. One of these queries
 		may contain an array of information. Those arrays and their subsequent fields are each parsed. For instance, the query that
-		contains information of logged in users may have recorded 3 different users from one computer. </td></tr>
- <tr><td>5. The data from the lists are then compared to lists of data deemed normal and expected. If there is match, then
+		contains information of logged in users may have recorded 3 different users from one computer. </li>
+ <li>>5. The data from the lists are then compared to lists of data deemed normal and expected. If there is match, then
 		the score increases for that specific field. If there is not match, then the score decreases. This is done for every field
-		of data attributed to the user. Those multiple field scores are added up to create a trust score.</td></tr>
- <tr><td>6. The trust score is then sent to the Trust API Handler, and the Trust API Handler pushes it to the Swissknife Handler. The Policy Agent documentation page will cover the next steps.</td></tr>
-</tbody></table>
-	
+		of data attributed to the user. Those multiple field scores are added up to create a trust score.</li>
+ <li>>6. The trust score is then sent to the Trust API Handler, and the Trust API Handler pushes it to the Swissknife Handler. The Policy Agent documentation page will cover the next steps.</li>
+	</ol>	
 	<style type="text/css">
 	table.tableizer-table {
 		font-size: 11px;
