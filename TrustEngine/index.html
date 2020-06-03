@@ -107,6 +107,34 @@ ol li {
 div.w {
   width: 65%; 
 }
+	<style type="text/css">
+	table.tableizer-table {
+		font-size: 11px;
+		border: 3px solid black; 
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		border-collapse: collapse;
+		table-layout: fixed;
+  		width: 100%;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid black;
+	}
+	.tableizer-table th {
+		background-color: #555555; 
+		color: #FFF;
+		font-weight: bold;
+		font-size: 15px;
+		border: 1px solid black;
+	}
+	.tableizer-table tv {
+		color: #555555;
+		font-weight: bold;
+		font-size: 15px;
+		border: 1px solid black;
+	}
 </style>
 </head>
 <body>
@@ -194,35 +222,8 @@ div.w {
  <li>The trust score is then sent to the Trust API Handler, and the Trust API Handler pushes it to the Swissknife Handler.</li>
 	</ol>
 	</div>
-	<style type="text/css">
-	table.tableizer-table {
-		font-size: 11px;
-		border: 3px solid black; 
-		font-family: Arial, Helvetica, sans-serif;
-		font-weight: bold;
-		border-collapse: collapse;
-		table-layout: fixed;
-  		width: 100%;
-	} 
-	.tableizer-table td {
-		padding: 4px;
-		margin: 3px;
-		border: 1px solid black;
-	}
-	.tableizer-table th {
-		background-color: #555555; 
-		color: #FFF;
-		font-weight: bold;
-		font-size: 15px;
-		border: 1px solid black;
-	}
-	.tableizer-table tv {
-		color: #555555;
-		font-weight: bold;
-		font-size: 15px;
-		border: 1px solid black;
-	}
-</style>
+
+
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th colspan="4">User</th><th colspan="4">Devices</th><th colspan="4">Application</th></tr></thead><tbody>
 	<tr><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td></tr>
