@@ -20,6 +20,15 @@ The time between when a user is interacting with their computer and when the use
 
 ## Trust Engine
 
+The Trust Engine is built with Python. Using the elasticsearch-dsl package, we were able to extract queries held in Elasticsearch. The query snapshot data is in JSON format so it needs to be parsed with regex in order to put the query fields into Python lists. We established what data was already considered expected or 'trusted' into lists and those lists were compared to the list data extracted from Elasticsearch.
+
+The way the scoring is done at the moment is relatively simple. Each field from the query starts at a base score and if the field it is
+compared to is matching it increases by a specified amount, but if there is not a match after comparing lists then the score is reduced.
+
+We also created a Trust API Handler. The Trust Engine waits on standby to get a username from the Trust API Handler, and that username is what is used for querying from Elasticsearch.
+
+This program took a long time to make. We tried a lot of different routes for extracting the information and also for parsing the JSON data into string format for Python lists. It was also very difficult to get the scoring code section to work because of a series of if and for loops creating a messy outcome. There is still more work to do but we are satisfied with its current state.
+
 ## Network Agent
 
 ## Policy Agent
@@ -36,4 +45,3 @@ The time between when a user is interacting with their computer and when the use
 * Set standards for scoring and metrics 
 * Refine osquery data fields 
 * Add Intrusion Detection System and another end-point monitoring system to increase metrics we gather and score on 
-
