@@ -116,10 +116,15 @@ p {
 	<h1>Policy Engine</h1>
 	
 <img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/>
-<p>Our policy engine uses Open Policy Agent, which is an open source unified toolset for policy. OPA uses the rego language, similar to GO, to evaluate policy decisions. The policy engine uses role based access control. Example:<br>
-"John": ["hr","engineering","webdev"]</p>
-<p>"engineering": [{"action": "read",  "object": "server123", "score": "60"}]</p>
-<p>The user John has access to the groups hr, engineering, and webdev. The engineering group takes in the action the user wants to perform, the resource on the network they are using, and minimum needed score.</p>
+<p>The policy engine uses Open Policy Agent. OPA is an open source unified toolset for policy. The policy engine uses rego, a Go like language where engineers can define policy actions through code. The policy engine can be queried via a GET request, and needs a username, resource, action, and score to determine an action. Our policy engine is set up to perform role base access control, as you can see here:<br>
+<img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/>
+<p>Because the policy engine needed so much information to make a decision, our network agent, traifik, was not set up to support this out of the box. This is why the Swissknife Handler was created. The Swissknife Handler is essentially a middleware handler that communicates with the Trust API Handler before the policy engine. The Swissknife Handler is configured as a middleware for our network agent. The Swissknife Handler works as follows:</p>
+<p>1.	The Swissknife Handler parses the username and resource from the network agents GET request.
+2.	The Swissknife Handler then PUTs the username into the Trust API Handler.
+3.	It then waits for a response from the Trust API Handler for the trust score.
+4.	Once the trust score has been received, the SwissKnife Handler then queries the policy engine providing the relevant data.
+5.	The Swissknife Handler then forwards the decision from the policy engine to the network agent. 
+</p>
 
 <p>There is a lot of data that needs to be processed before our policy engine can make a decision. Therefore we have a “handler”. This handler uses flask for python to create an API for the facilitation of passed data. See diagram above.</p>
 
