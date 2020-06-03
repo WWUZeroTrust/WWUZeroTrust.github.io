@@ -116,7 +116,7 @@ p {
 	<h1>Policy Engine</h1>
 	
 <img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/>
-<p>The policy engine uses Open Policy Agent. OPA is an open source unified toolset for policy. The policy engine uses rego, a Go like language where engineers can define policy actions through code. The policy engine can be queried via a GET request, and needs a username, resource, action, and score to determine an action. Our policy engine is set up to perform role base access control, as you can see here:<br>
+<p>The <b href="https://github.com/WWUZeroTrust/OPA">policy engine</b> uses Open Policy Agent. OPA is an open source unified toolset for policy. The policy engine uses rego, a Go like language where engineers can define policy actions through code. The policy engine can be queried via a GET request, and needs a username, resource, action, and score to determine an action. Our policy engine is set up to perform role base access control, as you can see here:<br>
 <img src="/image/User_Roles_Policy.PNG" alt="hi" class="inline" height="500" width="950"/>
 <p>Because the policy engine needed so much information to make a decision, our network agent, traifik, was not set up to support this out of the box. This is why the <b href="https://github.com/WWUZeroTrust/Swissknife_Handler/blob/master/handler.py">Swissknife Handler</b> was created. The Swissknife Handler is essentially a middleware handler that communicates with the Trust API Handler before the policy engine. The Swissknife Handler is configured as a middleware for our network agent. The Swissknife Handler works as follows:</p>
 <p>1.	The Swissknife Handler parses the username and resource from the network agents GET request.</p>
@@ -126,7 +126,7 @@ p {
 <p>5.	The Swissknife Handler then forwards the decision from the policy engine to the network agent. </p>
 	</p>
 	</div>
-	<footer>
+	<footer> 
 	 <ul>
 	       <li><a href="https://github.com/WWUZeroTrust/OPA">github.com/WWUZeroTrust/PolicyEngine</a></li>
 	</ul>
