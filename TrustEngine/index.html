@@ -223,13 +223,13 @@ div.w {
 	}
 	</style>
 	
-	<p>The table below shows our initial thought process when devising how the trust engine score would be calculated. The Table column
-		represent osquery tables and the information from the tables that we considered important for processing a trust score. Some of these fields have
-		an atomicity of 'no' or 'yes', which means we expect some of this information to always be the same such as the kernel 
-		information, but not necessarily the same for logged in users. In order to create a structured scoring engine, we decided to 
-		break up the aggregation of scores into three sections: User, Device, and Application. Each of them we consider equally important
-		when collecting information. These three sections can add up to 33, and when all added together total 99, with a rounding of 1
-		to create a high score of 100. 
+	<p>The table below shows our initial thought process when devising how the trust engine score would be calculated. The the left Table column 
+		represents osquery tables and the information from the tables that we considered important for processing a trust score. We chose these fields
+		because they presented a complete view of the information and sections that we deemed important. Some of these fields have an atomicity of 
+		'no' or 'yes', which means we expect some of this information to always be the same such as the kernel information, but not necessarily the 
+		same for logged in users. In order to create a structured scoring engine, we decided to break up the aggregation of scores into three sections: 
+		User, Device, and Application. Each of them we consider equally important when collecting information. These three sections can add up to 33, 
+		and when all added together total 99, with a rounding of 1 to create a high score of 100. 
 		
 		</p>
 	
@@ -261,9 +261,9 @@ div.w {
  <tr><td colspan="4">Final User Score: 100</td><td colspan="4">Final Device Score: 100</td><td colspan="4">Final Application Score: 100</td></tr>
 </tbody></table>
 	
-	<p>Now, our scoring system does not use all of this information below either because we found them to not be so helpful
-		or it was from time constraints. We intend to expand the information we use in the future for scoring, but for now this
-		table should be a good overview on how the collective scores create one final trust score.
+	<p>Now, our scoring system currently doesn't use all of this information above either because we found the fields to not be useful
+		or because of time constraints implementing them. We intend to expand the information we use in the future for scoring, but for now this
+		table is a good overview on how the collective scores create one final trust score.
 		</p>
 		
 	</div>
