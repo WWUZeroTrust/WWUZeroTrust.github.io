@@ -23,3 +23,17 @@ The time between when a user is interacting with their computer and when the use
 ## Network Agent
 
 ## Policy Agent
+
+## End of Spring Quarter Update
+
+## Final Thoughts on Implementing a Zero Trust Network
+
+## Future Plans
+
+* Add caching to the Handler and Trust Engine to ensure it only runs once 
+* Containerize all the systems and programs so that they can all be spun up quickly and easily 
+* Make the Trust Engine score more accurate
+* Set standards for scoring and metrics 
+* Refine osquery data fields 
+* Add Intrusion Detection System and another end-point monitoring system to increase metrics we gather and score on 
+
