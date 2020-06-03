@@ -151,10 +151,6 @@ div.w {
 	</p>
 		
 	<h2>ELK Stack and Trust Engine Overview</h2>
-	<p>The ELK Stack acts as a collecter and organizer of osquery data so that the Trust Engine can with ease make queries against Elasticsearch.</p>
-		
-	
-  	<img src="/image/Flowchart_ELK_TE.png" alt="hi" class="inline" height="500" width="950"/>
 		
 	<p>The ELK Stack consists of Logstash, Elasticsearch, Kibana, and in addition Filebeat. When packaged together these applications
 		take in, aggregate, and hold the osquery data received from the client. This data, in JSON format, is then available for user
@@ -167,8 +163,11 @@ div.w {
 		
 	
   	<img src="/image/Kibana_developer_medium.JPG" alt="hi" class="inline" height="500" width="750"/>
+	
+	<p>The ELK Stack acts as a collecter and organizer of osquery data so that the Trust Engine can with ease make queries against Elasticsearch.</p>
 		
-		
+	<img src="/image/Flowchart_ELK_TE.png" alt="hi" class="inline" height="500" width="950"/>
+	
 	<p>The Trust Engine's job is to create a trust score. This trust score works in unison with <a href="https://github.com/open-policy-agent/opa" class="class2">Open Policy Agent</a> 
 		to either allow or deny a user access to a secured application. The Trust Engine takes in JSON format Elasticsearch data
 		and parses it in order to identify the data related to user seeking access.
@@ -223,7 +222,22 @@ div.w {
 		border: 1px solid black;
 	}
 	</style>
-
+	
+	<p>The table shows our initial thought process when devising how the trust engine score would be calculated. The Table column
+		represent osquery tables and the information from the tables that we considered important for processing a trust score. Some of these fields have
+		an atomicity of 'no' or 'yes', which means we expect some of this information to always be the same such as the kernel 
+		information, but not necessarily the same for logged in users. In order to create a structured scoring engine, we decided to 
+		break up the aggregation of scores into three sections: User, Device, and Application. Each of them we consider equally important
+		when collecting information. These three sections can add up to 33, and when all added together total 99, with a rounding of 1
+		to create a high score of 100. 
+		
+		</p>
+	
+	<p>Now, our scoring system does not use all of this information below either because we found them to not be so helpful
+		or it was from time constraints. We intend to expand the information we use in the future for scoring, but for now this
+		table should be a good overview on how the collective scores create one final trust score.
+		</p>
+		
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th colspan="4">User</th><th colspan="4">Devices</th><th colspan="4">Application</th></tr></thead><tbody>
 	<tr><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td></tr>
