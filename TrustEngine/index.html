@@ -223,7 +223,7 @@ div.w {
 	}
 	</style>
 	
-	<p>The table shows our initial thought process when devising how the trust engine score would be calculated. The Table column
+	<p>The table below shows our initial thought process when devising how the trust engine score would be calculated. The Table column
 		represent osquery tables and the information from the tables that we considered important for processing a trust score. Some of these fields have
 		an atomicity of 'no' or 'yes', which means we expect some of this information to always be the same such as the kernel 
 		information, but not necessarily the same for logged in users. In order to create a structured scoring engine, we decided to 
@@ -233,11 +233,6 @@ div.w {
 		
 		</p>
 	
-	<p>Now, our scoring system does not use all of this information below either because we found them to not be so helpful
-		or it was from time constraints. We intend to expand the information we use in the future for scoring, but for now this
-		table should be a good overview on how the collective scores create one final trust score.
-		</p>
-		
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th colspan="4">User</th><th colspan="4">Devices</th><th colspan="4">Application</th></tr></thead><tbody>
 	<tr><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td><td>Table</td><td>Column</td><td>Score</td><td>Atomicity</td></tr>
@@ -265,6 +260,12 @@ div.w {
  <tr><td>&nbsp;</td><td>total = 100 </td><td>user = 33</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
  <tr><td colspan="4">Final User Score: 100</td><td colspan="4">Final Device Score: 100</td><td colspan="4">Final Application Score: 100</td></tr>
 </tbody></table>
+	
+	<p>Now, our scoring system does not use all of this information below either because we found them to not be so helpful
+		or it was from time constraints. We intend to expand the information we use in the future for scoring, but for now this
+		table should be a good overview on how the collective scores create one final trust score.
+		</p>
+		
 	</div>
 	<footer>
 	 <ul>
