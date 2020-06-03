@@ -122,27 +122,27 @@ A.class2:active {text-decoration: none; color: blue;}
 	<h1>Network Agent</h1>
 	<p>
 	In order to handle network connections and route requests accordingly through our security measures, we utilized a stack of 
-		technology on our frontend, all hosted on Docker. 
+		technology on our frontend, all hosted on <a href="https://www.docker.com/" class="class2">Docker. 
 	</p>	
 
 	<img src="/image/Flowchart_Traefik_NetworkAgent.png" alt="hi" class="inline" height="500" width="950"/>
 	
 	<p>	
-	On our front end we are hosting a webserver using Docker containers running Nginx and PHP for a Wordpress blog site which acts 
+	On our front end we are hosting a webserver using Docker containers running <a href="https://nginx.org/" class="class2">Nginx and <a href="https://www.php.net/" class="class2">PHP for a <a href="https://wordpress.org/" class="class2">Wordpress blog site which acts 
 		as the main page for our project.
 	</p>	
 
 	<img src="/image/Website.JPG" alt="hi" class="inline" height="626" width="903"/>
 	
 	<p>	
-	From here we have several links to other services like Portainer which allows us to access containers running on the system and 
+	From here we have several links to other services like <a href="https://www.portainer.io/" class="class2">Portainer which allows us to access containers running on the system and 
 		view various information and interact with them.
 	</p>
 		
 	<img src="/image/Portainer.JPG" alt="hi" class="inline" height="626" width="903"/>
 	
 	<p>
-	Mailhog is another service we host on our site; this service allows users to test their outgoing mail before sending out emails.
+	<a href="https://github.com/mailhog/MailHog" class="class2">Mailhog is another service we host on our site; this service allows users to test their outgoing mail before sending out emails.
 	</p>
 	
 	<img src="/image/Mailhog.JPG" alt="hi" class="inline" height="626" width="903"/>
@@ -154,14 +154,14 @@ A.class2:active {text-decoration: none; color: blue;}
 	</p>
 	
 	<p>
-	This all begins with Authelia, our single sign on service in a container which works in tandem with Traefik to incoming 
+	This all begins with <a href="https://docs.authelia.com/Authelia" class="class2">Authelia, our single sign on service in a container which works in tandem with Traefik to incoming 
 		connections to any of our sites and redirect the user to login before accessing any applications. 
 	</p>
 	
 	<br><img src="/image/Authelia.JPG" alt="hi" class="inline" height="683" width="1054"/>
 	
 	<p>
-	Traefik handles this by enforcing the AuthForward middleware which pushes authentication and authorization to a third-party
+	<a href="https://docs.traefik.io/" class="class2">Traefik handles this by enforcing the AuthForward middleware which pushes authentication and authorization to a third-party
 		service, in this case our Policy Engine, that returns an allow or deny response. 	
 	</p>
 	
