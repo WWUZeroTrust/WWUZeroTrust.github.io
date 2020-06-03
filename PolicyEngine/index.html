@@ -78,20 +78,18 @@ footer ul li {
     display: inline;
     margin-right: 20px;
 }
-a {
-    text-decoration: none;
-    color: white;
-}
-a:hover {
-    text-decoration: underline;
-}
-b {
-    text-decoration: none;
-    color: blue;
-}
-b:hover {
-    text-decoration: underline;
-}
+A.class1 {color:white;}
+A.class1:link  {text-decoration: none; color: white;}
+A.class1:visited {text-decoration: none; color: white;}
+A.class1:hover {text-decoration: underline; color: white;}
+A.class1:active {text-decoration: none; color: white;}
+
+
+A.class2 {color:blue;}
+A.class2:link {text-decoration: none; color: blue;}
+A.class2:visited {text-decoration: none; color: blue;}
+A.class2:hover {text-decoration: underline; color: blue;}
+A.class2:active {text-decoration: none; color: blue;}
 p {
     font-size: 1em;
     line-height: 1.4em;
@@ -116,9 +114,9 @@ p {
 	<h1>Policy Engine</h1>
 	
 <img src="/image/Flowchart_OPA_Handlers.png" alt="hi" class="inline" height="500" width="950"/>
-<p>The <b href="https://github.com/WWUZeroTrust/OPA">policy engine</b> uses <b href="https://www.openpolicyagent.org/">Open Policy Agent</b>(OPA). OPA is an open source unified toolset for policy. The policy engine uses rego, a Go like language where engineers can define policy actions through code. The policy engine can be queried via a GET request, and needs a username, resource, action, and score to determine an action. Our policy engine is set up to perform role base access control, as you can see here:<br>
+<p>The <a href="https://github.com/WWUZeroTrust/OPA" class="class2">policy engine</a> uses <a href="https://www.openpolicyagent.org/" class="class2">Open Policy Agent</a>(OPA). OPA is an open source unified toolset for policy. The policy engine uses rego, a Go like language where engineers can define policy actions through code. The policy engine can be queried via a GET request, and needs a username, resource, action, and score to determine an action. Our policy engine is set up to perform role base access control, as you can see here:<br>
 <img src="/image/User_Roles_Policy.PNG" alt="hi" class="inline" height="500" width="950"/>
-<p>Because the policy engine needed so much information to make a decision, our network agent, traifik, was not set up to support this out of the box. This is why the <b href="https://github.com/WWUZeroTrust/Swissknife_Handler/blob/master/handler.py">Swissknife Handler</b> was created. The Swissknife Handler is essentially a middleware handler that communicates with the Trust API Handler before the policy engine. The Swissknife Handler is configured as a middleware for our network agent. The Swissknife Handler works as follows:</p>
+<p>Because the policy engine needed so much information to make a decision, our network agent, traifik, was not set up to support this out of the box. This is why the <a href="https://github.com/WWUZeroTrust/Swissknife_Handler/blob/master/handler.py" class="class2">Swissknife Handler</a> was created. The Swissknife Handler is essentially a middleware handler that communicates with the Trust API Handler before the policy engine. The Swissknife Handler is configured as a middleware for our network agent. The Swissknife Handler works as follows:</p>
 <p>1.	The Swissknife Handler parses the username and resource from the network agents GET request.</p>
 <p>2.	The Swissknife Handler then PUTs the username into the Trust API Handler.</p>
 <p>3.	It then waits for a response from the Trust API Handler for the trust score.</p>
