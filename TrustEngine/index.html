@@ -79,20 +79,18 @@ footer ul li {
     display: inline;
     margin-right: 20px;
 }
-a {
-    text-decoration: none;
-    color: white;
-}
-a:hover {
-    text-decoration: underline;
-}
-b {
-    text-decoration: none;
-    color: blue;
-}
-b:hover {
-    text-decoration: underline;
-}
+A.class1 {color:white;}
+A.class1:link  {text-decoration: none; color: white;}
+A.class1:visited {text-decoration: none; color: white;}
+A.class1:hover {text-decoration: underline; color: white;}
+A.class1:active {text-decoration: none; color: white;}
+
+
+A.class2 {color:blue;}
+A.class2:link {text-decoration: none; color: blue;}
+A.class2:visited {text-decoration: none; color: blue;}
+A.class2:hover {text-decoration: underline; color: blue;}
+A.class2:active {text-decoration: none; color: blue;}
 p {
     font-size: 1em;
     line-height: 1.4em;
@@ -138,8 +136,8 @@ div.w {
   	<img src="/image/Flowchart_Kolide.png" alt="hi" class="inline" height="500" width="950"/>
 	<br>
 		
-	<p>The client machine is preinstalled with <b href="https://github.com/osquery/osquery">osquery</b>, a tool that turns computer information into a relational 
-		database. A few additional configurations are need as well to enable the client to transmit data to the <b href="https://github.com/kolide/fleet">Kolide Fleet</b> server. The 
+	<p>The client machine is preinstalled with <a href="https://github.com/osquery/osquery" class="class2">osquery</a>, a tool that turns computer information into a relational 
+		database. A few additional configurations are need as well to enable the client to transmit data to the <a href="https://github.com/kolide/fleet" class="class2">Kolide Fleet</a> server. The 
 		Kolide Fleet server is a tool used for managing a fleet of clients installed with osquery. Fleet can monitor if clients are
 		active, its version of osquery, and enable query packs to run on clients.</p>
 	
@@ -171,7 +169,7 @@ div.w {
   	<img src="/image/Kibana_developer_medium.JPG" alt="hi" class="inline" height="500" width="750"/>
 		
 		
-	<p>The Trust Engine's job is to create a trust score. This trust score works in unison with <b href="https://github.com/open-policy-agent/opa">Open Policy Agent</b> 
+	<p>The Trust Engine's job is to create a trust score. This trust score works in unison with <a href="https://github.com/open-policy-agent/opa" class="class2">Open Policy Agent</a> 
 		to either allow or deny a user access to a secured application. The Trust Engine takes in JSON format Elasticsearch data
 		and parses it in order to identify the data related to user seeking access.
 		
@@ -182,8 +180,8 @@ div.w {
 <ol>
 <li>The Trust Engine is on standby waiting to hear from the Trust API Handler to get the username.</li>
 <li>Once the Trust API Handler receives a username from the Swissknife Handler via a PUT request, the trust engine starts calculating a score.</li>
-<li>The Trust Engine using <b href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst">elasticsearch_dsl 
-		package</b> (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
+<li>The Trust Engine using <a href="https://github.com/elastic/elasticsearch-dsl-py/blob/master/docs/index.rst" class="class2">elasticsearch_dsl 
+		package</a> (a tool to easily build queries for Elasticsearch), grabs the latest query stored in Elasticsearch related to the 
 		the request specified in the query. The first part of the query filters by the username received from the Trust API Handler.
 		 Next the query is set to match anything from the osquery pack, 'testpack’. Last, only the 'snapshot' data field is returned
 	from the query.</li>
@@ -255,7 +253,7 @@ div.w {
 	</div>
 	<footer>
 	 <ul>
-	       <li><a href="https://github.com/WWUZeroTrust/trust_engine">github.com/WWUZeroTrust/TrustEngine</a></li>
+	       <li><a href="https://github.com/WWUZeroTrust/trust_engine" class="class1">github.com/WWUZeroTrust/TrustEngine</a></li>
 	</ul>
 	</footer>
 </html>
