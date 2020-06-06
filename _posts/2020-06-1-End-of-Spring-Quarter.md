@@ -35,11 +35,13 @@ The Network Agent is a combintation of Authelia and Traefik. Authelia is a Singl
 
 ## Policy Agent
 
-The policy agent 
+The policy agent uses Role Based Access Control to grant access to users. The tool used is Open Policy Agent (OPA). OPA receives information from the Swissknife handler which acts as a Middleware between OPA and the Trust API Handler. OPA reads that information and gives it a true or false for user rights access dependent on the trust score received.
 
 ## End of Spring Quarter Update
 
 ## Final Thoughts on Implementing a Zero Trust Network
+
+We started this project with only a vague idea of how to implement a Zero Trust network. Through multiple evaluations and testing we managed to find a combination of tools that could demonstate a working example of a Zero Trust network.
 
 ## Future Plans
 
