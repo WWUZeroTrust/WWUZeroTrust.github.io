@@ -31,7 +31,11 @@ This program took a long time to make. We tried a lot of different routes for ex
 
 ## Network Agent
 
+The Network Agent is a combintation of Authelia and Traefik. Authelia is a Single Sign-On service and Traefik is a proxy for the traffic. The user signs in to the website and Authelia request the user enter their sign-on credentials. If the user then tries to log into a secured application the traffic is then re-routed through Traefik to get access from the Trust Engine. 
+
 ## Policy Agent
+
+The policy agent 
 
 ## End of Spring Quarter Update
 
