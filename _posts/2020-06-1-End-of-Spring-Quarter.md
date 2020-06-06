@@ -41,7 +41,7 @@ The policy agent uses Role Based Access Control to grant access to users. The to
 
 ## Final Thoughts on Implementing a Zero Trust Network
 
-We started this project with only a vague idea of how to implement a Zero Trust network. Through multiple evaluations and testing we managed to find a combination of tools that could demonstate a working example of a Zero Trust network.
+We started this project with only a vague idea of how to implement a Zero Trust network. Through multiple evaluations and testing we managed to find a combination of tools that could demonstrate a working example of a Zero Trust network. We believe the amount of time we put into this project was worthwhile. It introduced us to a lot of new tools and furthered some of our understanding in areas we only felt somewhat knowledgeable about initially. We became more familiar with Docker containers, JSON data and HTTP requests, designing a Zero Trust environment from the ground up, and even a little CSS and HTML.
 
 ## Future Plans
 
