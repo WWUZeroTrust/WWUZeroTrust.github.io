@@ -31,9 +31,9 @@ This program took a long time to make. We tried a lot of different routes for ex
 
 ## Network Agent
 
-The Network Agent is a combintation of Authelia and Traefik. Authelia is a Single Sign-On service and Traefik is a proxy for the traffic. The user signs in to the website and Authelia request the user enter their sign-on credentials. If the user then tries to log into a secured application the traffic is then re-routed through Traefik to get access from the Trust Engine. 
+The Network Agent is a combintation of Authelia and Traefik. Authelia is a Single Sign-On service and Traefik is a proxy users connecting to the secured applications. The full data flow through Authelia and Traefik is detailed on the Documentation page under the Network Agent. Authelia sits before any of our applications on the front end and requires users to sign into it before accessing any applications. Traefik will route requests according to our specifications, which begins by forcing them through Authelia before re-routing them to our secured applications once the Policy Engine allows it.
 
-## Policy Agent
+## Policy Engine
 
 The policy agent uses Role Based Access Control to grant access to users. The tool used is Open Policy Agent (OPA). OPA receives information from the Swissknife handler which acts as a Middleware between OPA and the Trust API Handler. OPA reads that information and gives it a true or false for user rights access dependent on the trust score received.
 
